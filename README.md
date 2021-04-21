@@ -29,7 +29,7 @@ Project1:
 
 
 
- -IfPlayerSurvives
+ - IfPlayerSurvives
     Ask name
     Update list of winners
     Stored in MAZE_XX_WINNERS.txt
