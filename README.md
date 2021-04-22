@@ -7,6 +7,7 @@ Project1:
     2) Rules
     3) Play
         if 2):
+        
           Number of the maze: XX
           Create a file MAZE_XX.TXT
           Loop till the file is found or the input is 0 -> show the initial menu
