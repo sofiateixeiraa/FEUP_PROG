@@ -14,7 +14,7 @@ Project1:
 - ShowTheMaze:
   H = player alive; h = player dead
   R = robot alive; r = robot dead
-  * = eletrical fence;
+  ** = eletrical fence;
  
 - AskThePlayer:
         Q  W  E
