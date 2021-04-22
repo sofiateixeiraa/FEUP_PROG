@@ -3,9 +3,9 @@ EIC0012 Programação - MIEIC
 
 Project1:
 - Menu 3 opções:
-    0) Exit
-    1) Rules
-    2) Play
+    1) Exit
+    2) Rules
+    3) Play
         if 2):
           Number of the maze: XX
           Create a file MAZE_XX.TXT
