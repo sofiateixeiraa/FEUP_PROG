@@ -240,7 +240,14 @@ int menu() {
     return mode;
 }
 
+void showInstructions() {
+    cout << "OBJECTIVE\nThe game starts \n";
+}
+
 int main() {
     menu();
     int option = menu();
+    if (option == 0) {
+        showInstructions();
+    }
 }
