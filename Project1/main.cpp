@@ -57,36 +57,169 @@ Game read_maze(char* mazenum) {
 }
 
 bool player_move(char move, Game& game) {
-	int new_x, new_y;
-	switch (move) {
-	case 'w':
-		new_x = game.x;
-		new_y = game.y-1;
-		if (game.maze[new_x][new_y] == "*")
-			return false;
-		game.maze[new_x][new_y] = 'H';
-		game.maze[game.x][game.y] = ' ';
-		game.x = new_x;
-		game.y = new_y;
-    case 'x':
-        new_x = game.x;
-        new_y = game.y + 1;
-        if (game.maze[new_x][new_y] == "*")
-            return false;
-        game.maze[new_x][new_y] = 'H';
-        game.maze[game.x][game.y] = ' ';
-        game.x = new_x;
-        game.y = new_y;
-    case 'a':
-        new_x = game.x - 1;
-        new_y = game.y;
-        if (game.maze[new_x][new_y] == "*")
-            return false;
-        game.maze[new_x][new_y] = 'H';
-        game.maze[game.x][game.y] = ' ';
-        game.x = new_x;
-        game.y = new_y;
-	}
+	int new_x, new_y, aux = 0, aux1 = 0;
+    while (aux == 0 || aux1 == 0) {
+        switch (move) {
+        case 'w':
+        case 'W':
+            new_x = game.x;
+            new_y = game.y - 1;
+            if (game.maze[new_x][new_y] == "r") {
+                cout << "Please try again, valid movements: Q,W,E,A,S,D,Z,X,C";
+                aux1 = 1;
+            }
+            else {
+                if (game.maze[new_x][new_y] == "*")
+                    return false;
+                game.maze[new_x][new_y] = 'H';
+                game.maze[game.x][game.y] = ' ';
+                game.x = new_x;
+                game.y = new_y;
+                aux = 1;
+            }
+        case 'x':
+        case 'X':
+            new_x = game.x;
+            new_y = game.y + 1;
+            if (game.maze[new_x][new_y] == "r") {
+                cout << "Please try again, valid movements: Q,W,E,A,S,D,Z,X,C";
+                aux1 = 1;
+            }
+            else {
+                if (game.maze[new_x][new_y] == "*")
+                    return false;
+                game.maze[new_x][new_y] = 'H';
+                game.maze[game.x][game.y] = ' ';
+                game.x = new_x;
+                game.y = new_y;
+                aux = 1;
+            }
+        case 'a':
+        case 'A':
+            new_x = game.x - 1;
+            new_y = game.y;
+            if (game.maze[new_x][new_y] == "r") {
+                cout << "Please try again, valid movements: Q,W,E,A,S,D,Z,X,C";
+                aux1 = 1;
+            }
+            else {
+                if (game.maze[new_x][new_y] == "*")
+                    return false;
+                game.maze[new_x][new_y] = 'H';
+                game.maze[game.x][game.y] = ' ';
+                game.x = new_x;
+                game.y = new_y;
+                aux = 1;
+            }
+        case 'd':
+        case 'D':
+            new_x = game.x + 1;
+            new_y = game.y;
+            if (game.maze[new_x][new_y] == "r") {
+                cout << "Please try again, valid movements: Q,W,E,A,S,D,Z,X,C";
+                aux1 = 1;
+            }
+            else {
+                if (game.maze[new_x][new_y] == "*")
+                    return false;
+                game.maze[new_x][new_y] = 'H';
+                game.maze[game.x][game.y] = ' ';
+                game.x = new_x;
+                game.y = new_y;
+                aux = 1;
+            }
+        case 'z':
+        case 'Z':
+            new_x = game.x - 1;
+            new_y = game.y + 1;
+            if (game.maze[new_x][new_y] == "r") {
+                cout << "Please try again, valid movements: Q,W,E,A,S,D,Z,X,C";
+                aux1 = 1;
+            }
+            else {
+                if (game.maze[new_x][new_y] == "*")
+                    return false;
+                game.maze[new_x][new_y] = 'H';
+                game.maze[game.x][game.y] = ' ';
+                game.x = new_x;
+                game.y = new_y;
+                return true;
+                aux = 1;
+            }
+        case 'c':
+        case 'C':
+            new_x = game.x + 1;
+            new_y = game.y + 1;
+            if (game.maze[new_x][new_y] == "r") {
+                cout << "Please try again, valid movements: Q,W,E,A,S,D,Z,X,C";
+                aux1 = 1;
+            }
+            else {
+                if (game.maze[new_x][new_y] == "*" || game.maze[new_x][new_y] == "R")
+                    return false;
+                game.maze[new_x][new_y] = 'H';
+                game.maze[game.x][game.y] = ' ';
+                game.x = new_x;
+                game.y = new_y;
+                return true;
+                aux = 1;
+            }
+        case 'q':
+        case 'Q':
+            new_x = game.x - 1;
+            new_y = game.y - 1;
+            if (game.maze[new_x][new_y] == "r") {
+                cout << "Please try again, valid movements: Q,W,E,A,S,D,Z,X,C";
+                aux1 = 1;
+            }
+            else {
+                if (game.maze[new_x][new_y] == "*" || game.maze[new_x][new_y] == "R")
+                    return false;
+                game.maze[new_x][new_y] = 'H';
+                game.maze[game.x][game.y] = ' ';
+                game.x = new_x;
+                game.y = new_y;
+                return true;
+                aux = 1;
+            }
+        case 'e':
+        case 'E':
+            new_x = game.x + 1;
+            new_y = game.y - 1;
+            if (game.maze[new_x][new_y] == "r") {
+                cout << "Please try again, valid movements: Q,W,E,A,S,D,Z,X,C";
+                aux1 = 1;
+            }
+            else {
+                if (game.maze[new_x][new_y] == "*" || game.maze[new_x][new_y] == "R")
+                    return false;
+                game.maze[new_x][new_y] = 'H';
+                game.maze[game.x][game.y] = ' ';
+                game.x = new_x;
+                game.y = new_y;
+                return true;
+                aux = 1;
+            }
+        case 's':
+        case 'S':
+            new_x = game.x;
+            new_y = game.y;
+            if (game.maze[new_x][new_y] == "r") {
+                cout << "Please try again, valid movements: Q,W,E,A,S,D,Z,X,C";
+                aux1 = 1;
+            }
+            else {
+                if (game.maze[new_x][new_y] == "*" || game.maze[new_x][new_y] == "R")
+                    return false;
+                game.maze[new_x][new_y] = 'H';
+                game.maze[game.x][game.y] = ' ';
+                game.x = new_x;
+                game.y = new_y;
+                return true;
+                aux = 1;
+            }
+        }
+    }
 }
 
 int menu() {
