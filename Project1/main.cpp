@@ -43,21 +43,26 @@ void ClearScreen()
     cout << string(50, '\n');
     #endif
 }
+typedef struct Pos {
+    int xr, yr;
+} Pos;
+
 typedef struct Game {
 	int x, y;
 	vector<vector<string>> maze;
+    vector <Pos> robotpositions;
 } Game;
+
 
 Game read_maze(char* mazenum) {
 	Game board;
-
 
 
 	return board;
 }
 
 bool player_move(char move, Game& game) {
-	int new_x, new_y, aux = 0, aux1 = 0;
+    int new_x, new_y, aux = 0, aux1 = 0;
     while (aux == 0 || aux1 == 0) {
         switch (move) {
         case 'w':
@@ -143,7 +148,6 @@ bool player_move(char move, Game& game) {
                 game.maze[game.x][game.y] = ' ';
                 game.x = new_x;
                 game.y = new_y;
-                return true;
                 aux = 1;
             }
         case 'c':
@@ -161,7 +165,6 @@ bool player_move(char move, Game& game) {
                 game.maze[game.x][game.y] = ' ';
                 game.x = new_x;
                 game.y = new_y;
-                return true;
                 aux = 1;
             }
         case 'q':
@@ -179,7 +182,6 @@ bool player_move(char move, Game& game) {
                 game.maze[game.x][game.y] = ' ';
                 game.x = new_x;
                 game.y = new_y;
-                return true;
                 aux = 1;
             }
         case 'e':
@@ -197,7 +199,6 @@ bool player_move(char move, Game& game) {
                 game.maze[game.x][game.y] = ' ';
                 game.x = new_x;
                 game.y = new_y;
-                return true;
                 aux = 1;
             }
         case 's':
@@ -215,13 +216,16 @@ bool player_move(char move, Game& game) {
                 game.maze[game.x][game.y] = ' ';
                 game.x = new_x;
                 game.y = new_y;
-                return true;
                 aux = 1;
             }
         }
     }
 }
-
+/*
+bool robot_move(char move, Game &gamer) {
+    
+}
+*/
 int menu() {
     int mode, op = 0;
     ClearScreen();
@@ -230,7 +234,7 @@ int menu() {
         cout << "(1) - Let's Play!!\n\n";
         cout << "(2) - Quit game\n\n";
         cin >> mode;
-        if (mode <= 0 || mode >= 3) {
+        if (mode <= -1 || mode >= 3) {
             cout << "Invalid option. Try again: \n";
         }
         else
