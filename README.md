@@ -9,6 +9,7 @@ Functions:
 - bool read_maze(string fileName, Game& board1)
 - bool player_move(char move, Game& game) 
 - bool robot_move(char move, Game &gamer)
+- int askWinner()
 
 --------------------------
 - Menu 3 opções:
