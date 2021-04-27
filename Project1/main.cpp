@@ -254,4 +254,7 @@ int main() {
     if (option == 0) {
         showInstructions();
     }
+    if (option == 2) {
+        cout << "See you soon...";
+    }
 }
