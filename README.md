@@ -12,7 +12,7 @@ Functions:
 - int askWinner()
 
 --------------------------
-- Menu 3 opções:
+- Menu 3 options:
     1) Exit
     2) Rules
     3) Play
