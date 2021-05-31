@@ -1,0 +1,18 @@
+OBJECTIVES:
+You are  in a maze of high-voltage fences. There are also some interceptor robots that will try to destroy you.
+If you touch the maze or any of these robots, that is the end of the game.
+The robots are destroyed when they touch the fences or when they collide with each other.
+Every time you move in any direction, each robot moves one cell closer to your new location, in whichever direction is the shortest path.
+The robots will follow you!
+
+MOVEMENTS:
+The movement is indicated by typing one of the letters:
+Q (Forward-left);W(Forward);E(Forward-Right);
+A(Center-Left);S(Maintain the same position);D(Center-Right)
+Z (Back-left);X(Back);C(Back-right)
+You can't move to cells occupied by destroyed robots.
+The above mentioned letters may be typed in uppercase or lowercase.
+You have electrified posts (*) and non-electrified posts (+).
+You can exit the game by typing CTRL - Z, in Windows, or CTRL - D, in Linux.
+You lose when you are caught by any robot that is alive or you if you encounter an high-voltage fence.
+You win when all robots are destroyed and you can go to one exit door (O)
